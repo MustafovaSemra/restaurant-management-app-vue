@@ -11,6 +11,12 @@
       "email": "semra@test.com",
       "password": "1234",
       "id": 2
+    },
+    {
+      "email": "",
+      "password": "",
+      "name": "",
+      "id": 3
     }
   ]
 }

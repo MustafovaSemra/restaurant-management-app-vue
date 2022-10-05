@@ -3,13 +3,12 @@
     src="../assets/Restaurant-Logo-or-Icon-Design-Vector-Graphics-9987300-2-580x387.jpeg"
     class="logo"
   />
-  <h1>Sign Up</h1>
-  <div class="register">
-    <input v-model="name" type="text" placeholder="Name" />
+  <h1>Login</h1>
+  <div class="login">
     <input v-model="email" type="text" placeholder="Email" />
     <input v-model="password" type="password" placeholder="Password" />
-    <button @click="signUp">Sign Up</button>
-    <p><router-link to="/login">Login</router-link></p>
+    <button @click="login">Login</button>
+    <p><router-link to="/sign-up">Sign Up</router-link></p>
   </div>
 </template>
 
@@ -17,28 +16,23 @@
 import axios from "axios";
 
 export default {
-  name: "SignUp",
+  name: "LogIn",
   data() {
     return {
-      name: "",
       email: "",
       password: "",
     };
   },
   methods: {
-    async signUp() {
-      let res = await axios.post("http://localhost:3000/users", {
-        email: this.email,
-        password: this.password,
-        name: this.name,
-      });
+    async login() {
+      let res = await axios.get(
+        `http://localhost:3000/users?email=${this.email}&password=${this.password}`
+      );
 
-      if (res.status === 201) {
+      if (res.status === 200 && res.data.length > 0) {
         this.$router.push({ name: "HomePage" });
-        localStorage.setItem("user-info", JSON.stringify(res.data));
+        localStorage.setItem("user-info", JSON.stringify(res.data[0]));
       }
-
-      console.log(res, "res");
     },
   },
   mounted() {
