@@ -34,7 +34,7 @@ export default {
       });
 
       if (res.status === 201) {
-        this.$router.push({ name: "HomePage" });
+        this.$router.push({ name: "Home" });
         localStorage.setItem("user-info", JSON.stringify(res.data));
       }
 
@@ -44,7 +44,7 @@ export default {
   mounted() {
     let user = localStorage.getItem("user-info");
     if (user) {
-      this.$router.push({ name: "HomePage" });
+      this.$router.push({ name: "Home" });
     }
   },
 };

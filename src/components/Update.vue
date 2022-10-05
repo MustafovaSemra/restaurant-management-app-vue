@@ -1,13 +1,13 @@
 <template>
-  <h1>Hello User, Welcome to Home Page</h1>
   <Header></Header>
+  <h1>Hello User, Welcome to Update Restaurant Page</h1>
 </template>
 
 <script>
 import Header from "./Header.vue";
 
 export default {
-  name: "HomePage",
+  name: "Update",
   components: {
     Header,
   },

@@ -30,7 +30,7 @@ export default {
       );
 
       if (res.status === 200 && res.data.length > 0) {
-        this.$router.push({ name: "HomePage" });
+        this.$router.push({ name: "Home" });
         localStorage.setItem("user-info", JSON.stringify(res.data[0]));
       }
     },
@@ -38,7 +38,7 @@ export default {
   mounted() {
     let user = localStorage.getItem("user-info");
     if (user) {
-      this.$router.push({ name: "HomePage" });
+      this.$router.push({ name: "Home" });
     }
   },
 };
