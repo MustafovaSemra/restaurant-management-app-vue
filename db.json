@@ -18,5 +18,25 @@
       "name": "",
       "id": 3
     }
+  ],
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Burger King",
+      "contact": 1111,
+      "address": "Miami"
+    },
+    {
+      "id": 2,
+      "name": "KFC",
+      "contact": 1111,
+      "address": "Boston"
+    },
+    {
+      "id": 3,
+      "name": "Chipotle",
+      "contact": 1111,
+      "address": "NY"
+    }
   ]
 }
