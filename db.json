@@ -37,6 +37,12 @@
       "name": "Chipotle",
       "contact": 1111,
       "address": "NY"
+    },
+    {
+      "name": "Test Restaurant",
+      "address": "123 Test St, Miami",
+      "contact": "12334555",
+      "id": 6
     }
   ]
 }

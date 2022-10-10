@@ -20,7 +20,7 @@
       name="contact"
       placeholder="Contact"
     />
-    <button type="button">Add Restaurant</button>
+    <button type="button" @click="addRestaurant">Add Restaurant</button>
   </form>
 </template>
 
@@ -41,7 +41,11 @@ export default {
       },
     };
   },
-  methods: {},
+  methods: {
+    addRestaurant() {
+      console.log(this.restaurant, "test");
+    },
+  },
   mounted() {
     let user = localStorage.getItem("user-info");
     if (!user) {
