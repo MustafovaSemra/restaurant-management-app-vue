@@ -20,12 +20,13 @@
       name="contact"
       placeholder="Contact"
     />
-    <button type="button" @click="addRestaurant">Update Restaurant</button>
+    <button type="button" @click="updateRestaurant">Update Restaurant</button>
   </form>
 </template>
 
 <script>
 import Header from "./Header.vue";
+import axios from "axios";
 
 export default {
   name: "Update",
@@ -41,11 +42,31 @@ export default {
       },
     };
   },
-  mounted() {
+  async mounted() {
     let user = localStorage.getItem("user-info");
     if (!user) {
       this.$router.push({ name: "SignUp" });
     }
+    const res = await axios.get(
+      `http://localhost:3000/restaurants/${this.$route.params.id}`
+    );
+    this.restaurant = res.data;
+  },
+  methods: {
+    async updateRestaurant() {
+      const res = await axios.put(
+        `http://localhost:3000/restaurants/${this.$route.params.id}`,
+        {
+          name: this.restaurant.name,
+          address: this.restaurant.address,
+          contact: this.restaurant.contact,
+        }
+      );
+
+      if (res.status === 200) {
+        this.$router.push({ name: "Home" });
+      }
+    },
   },
 };
 </script>
