@@ -47,12 +47,6 @@
     {
       "name": "Stuffed Eggplant",
       "address": "22 Washington Ave",
-      "contact": "2222",
-      "id": 7
-    },
-    {
-      "name": "Stuffed Eggplant",
-      "address": "22 Washington Ave",
       "contact": "1111111111",
       "id": 8
     },
@@ -67,12 +61,6 @@
       "address": "22 Washington Ave",
       "contact": "1111",
       "id": 10
-    },
-    {
-      "name": "Potato",
-      "address": "22 Washington Ave",
-      "contact": "1111",
-      "id": 11
     }
   ]
 }
